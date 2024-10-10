@@ -79,28 +79,28 @@ Above are the summary statistics for numerical variables of interest.
 
 ## Data Visualization
 ### Track Choice
-![track](assets\avg_inc_track.png)
+![track](assets/avg_inc_track.png)
 
 *Bar Graph visuzalizing the average incident count for a given track*
 
 From the graph it is apparent that track choice has a great impact on the average incident count of a given race. This is expected given tracks vary greatly in difficulty, length, track-limit scrutiny, etc. This variation makes track name a strong candidate in variable selection for our model. 
 
 ### Day of the Week
-![Day](assets\avg_inc_day.png)
+![Day](assets/avg_inc_day.png)
 
 *Bar Graph visualizing the average incident count for each day of the week*
 
 Given the iRacing week starts on Tuesday and ends on Monday, one would expect incidents to be highest on Tuesday and lowest on Monday as drivers become accustomed to the track over the course of the week. This is confirmed by the bar graph, although the magnitude of this effect appears to be rather small. 
 
 ### Strength of Field 
-![SOF](assets\sof_scatter.png)
+![SOF](assets/sof_scatter.png)
 
 *Scatterplot visualizing how strenght of field affects average incident count*
 
 Given strength of field is a measure of driver skill, one would assume that a higher strenght of field would correlate to a lower incident count. There does appear to be a slight negative correlation between the two offset by a few outliers. 
 
 ### Average License Level
-![SOF](assets\avg_license_scatter.png)
+![SOF](assets/avg_license_scatter.png)
 
 *Scatterplot visualizing how the average license level of drivers in a race affects incident count. In addition, strenght of field is visualized as a hue, with lighter colors indicating higher SOF*
 
@@ -110,7 +110,7 @@ In addition, it appears that strength of field is highly correlated with license
 
 ### Multicollinearity Check
 
-![matrix](assets\scatter_matrix2.png)
+![matrix](assets/scatter_matrix2.png)
 *Scatterplot matrix to check for correlation between all variables, with the distributions of each individual variable plotted on the diagonal*
 
 The above scatterplot matrix confirms the high correlation observed earlier between strength of field and average license level. It also shows no significant visual relationship between average incidents and driver count or average incidents and temperature. 
@@ -135,7 +135,7 @@ The model was fit using the SciKit-Learn package in Python. The data was split i
 ## Results
 Running the model on the test data and plotting the predictions versus the actual values yielded the below scatterplot: 
 
-![actualvspredict](assets\actual_vs_predicted2.png)
+![actualvspredict](assets/actual_vs_predicted2.png)
 
 *Scatterplot of the actual observed values versus the values predicted by the model using the test data*
 
@@ -166,7 +166,7 @@ In order to assess the validity of the model we need to confirm that the errors 
 
 The histogram below confirms that the residuals follow a normal distribution, meaning the errors made by the model are random. 
 
-![hist](assets\residual_hist2.png)
+![hist](assets/residual_hist2.png)
 
 *Histogram visualizing the distribution of the residuals*
 
@@ -174,7 +174,7 @@ The histogram below confirms that the residuals follow a normal distribution, me
 
 To further confirm the normality of the residuals, we can create a Q-Q Plot which plots the quantiles of the residuals against the theoreitcal quantiles of a normal distribution. 
 
-![qq](assets\residual_qq2.png)
+![qq](assets/residual_qq2.png)
 
 *Q-Q Plot visualizing the quantiles of the residuals agains the quantiles of a normal distribution*
 
