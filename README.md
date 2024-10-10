@@ -32,7 +32,7 @@ The data for this project was pulled from the iRacing data API using the Python 
 
 # Exploratory Data Analysis and Feature Selection
 
-Code for the remaining sections can be found [here]().
+Code for the remaining sections can be found [here](https://github.com/bennettrh/IRacing_Incident_Prediction/blob/main/EDA_Regression.ipynb).
 
 ## Data Overview
 |   | subsession_ID | track_name                    | track_id | driver_count | week_num | date                       | SOF  | lead_changes | average_incidents | track_length | track_corners | free_track | day_of_week | average_license | temperature |
