@@ -10,7 +10,7 @@ This project aims to predict the average incident count in iRacing race sessions
 # Data Acquisition
 The dataset for this project contains statistics for every race result from the 2023 season 4 of the FIA Formula 4 series on iRacing. 
 
-The data for this project was pulled from the iRacing data API using the Python wrapper linked [here](https://github.com/jasondilworth56/iracingdataapi). To create the dataset I wrote several functions to perform multiple api calls and aggregate the retrieved data into a single Pandas Dataframe. The code for data acquisition can be found [here]().
+The data for this project was pulled from the iRacing data API using the Python wrapper linked [here](https://github.com/jasondilworth56/iracingdataapi). To create the dataset I wrote several functions to perform multiple api calls and aggregate the retrieved data into a single Pandas Dataframe. The code for data acquisition can be found [here](https://github.com/bennettrh/IRacing_Incident_Prediction/blob/main/Data_Acquisition.ipynb).
 
 ## Variables
 - **Subsession ID:** Unique ID assigned to every race session. Useful as an argument for performing further api calls in the event you wish to add data specific to a given race session. 
