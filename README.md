@@ -35,135 +35,14 @@ The data for this project was pulled from the iRacing data API using the Python 
 Code for the remaining sections can be found [here]().
 
 ## Data Overview
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+|   | subsession_ID | track_name                    | track_id | driver_count | week_num | date                       | SOF  | lead_changes | average_incidents | track_length | track_corners | free_track | day_of_week | average_license | temperature |
+|---|---------------|-------------------------------|----------|--------------|----------|----------------------------|------|--------------|-------------------|--------------|---------------|------------|-------------|----------------|-------------|
+| 0 | 63655736      | Okayama International Circuit  | 166      | 22           | 0        | 2023-09-12 01:45:00+00:00   | 2781 | 0            | 4.909091           | 2.314        | 11            | True       | 1           | 14.045455       | 74          |
+| 1 | 63655737      | Okayama International Circuit  | 166      | 21           | 0        | 2023-09-12 01:45:00+00:00   | 1757 | 2            | 4.190476           | 2.314        | 11            | True       | 1           | 12.666667       | 74          |
+| 2 | 63655738      | Okayama International Circuit  | 166      | 21           | 0        | 2023-09-12 01:45:00+00:00   | 1559 | 0            | 5.904762           | 2.314        | 11            | True       | 1           | 13.142857       | 74          |
+| 3 | 63655739      | Okayama International Circuit  | 166      | 21           | 0        | 2023-09-12 01:45:00+00:00   | 1354 | 1            | 8.666667           | 2.314        | 11            | True       | 1           | 10.666667       | 74          |
+| 4 | 63655740      | Okayama International Circuit  | 166      | 21           | 0        | 2023-09-12 01:45:00+00:00   | 1203 | 0            | 9.619048           | 2.314        | 11            | True       | 1           | 10.809524       | 74          |
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>subsession_ID</th>
-      <th>track_name</th>
-      <th>track_id</th>
-      <th>driver_count</th>
-      <th>week_num</th>
-      <th>date</th>
-      <th>SOF</th>
-      <th>lead_changes</th>
-      <th>average_incidents</th>
-      <th>track_length</th>
-      <th>track_corners</th>
-      <th>free_track</th>
-      <th>day_of_week</th>
-      <th>average_license</th>
-      <th>temperature</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>63655736</td>
-      <td>Okayama International Circuit</td>
-      <td>166</td>
-      <td>22</td>
-      <td>0</td>
-      <td>2023-09-12 01:45:00+00:00</td>
-      <td>2781</td>
-      <td>0</td>
-      <td>4.909091</td>
-      <td>2.314</td>
-      <td>11</td>
-      <td>True</td>
-      <td>1</td>
-      <td>14.045455</td>
-      <td>74</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>63655737</td>
-      <td>Okayama International Circuit</td>
-      <td>166</td>
-      <td>21</td>
-      <td>0</td>
-      <td>2023-09-12 01:45:00+00:00</td>
-      <td>1757</td>
-      <td>2</td>
-      <td>4.190476</td>
-      <td>2.314</td>
-      <td>11</td>
-      <td>True</td>
-      <td>1</td>
-      <td>12.666667</td>
-      <td>74</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>63655738</td>
-      <td>Okayama International Circuit</td>
-      <td>166</td>
-      <td>21</td>
-      <td>0</td>
-      <td>2023-09-12 01:45:00+00:00</td>
-      <td>1559</td>
-      <td>0</td>
-      <td>5.904762</td>
-      <td>2.314</td>
-      <td>11</td>
-      <td>True</td>
-      <td>1</td>
-      <td>13.142857</td>
-      <td>74</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>63655739</td>
-      <td>Okayama International Circuit</td>
-      <td>166</td>
-      <td>21</td>
-      <td>0</td>
-      <td>2023-09-12 01:45:00+00:00</td>
-      <td>1354</td>
-      <td>1</td>
-      <td>8.666667</td>
-      <td>2.314</td>
-      <td>11</td>
-      <td>True</td>
-      <td>1</td>
-      <td>10.666667</td>
-      <td>74</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>63655740</td>
-      <td>Okayama International Circuit</td>
-      <td>166</td>
-      <td>21</td>
-      <td>0</td>
-      <td>2023-09-12 01:45:00+00:00</td>
-      <td>1203</td>
-      <td>0</td>
-      <td>9.619048</td>
-      <td>2.314</td>
-      <td>11</td>
-      <td>True</td>
-      <td>1</td>
-      <td>10.809524</td>
-      <td>74</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 Shown above are the first 5 rows of the dataset, allowing us to visualize any necessary cleanup.
 -  Date can be dropped because using it in the model would make generalizing it to other 12 week iRacing seasons difficult. The effect of date may be stronger if the season of interest is duirng the holidays than if it is in the middle of the summer. Day of week will be converted from an integer to a string for the sake of clarity as well. 
@@ -174,99 +53,17 @@ Shown above are the first 5 rows of the dataset, allowing us to visualize any ne
 
 ## Summary Statistics
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+|       | driver_count | SOF         | average_incidents | average_license | temperature |
+|-------|--------------|-------------|-------------------|-----------------|-------------|
+| count | 8575.000000  | 8575.000000 | 8575.000000       | 8575.000000     | 8575.000000 |
+| mean  | 21.151487    | 1525.663790 | 7.318861          | 10.402733       | 73.655860   |
+| std   | 2.013780     | 725.214854  | 1.642387          | 2.068108        | 6.648384    |
+| min   | 12.000000    | 401.000000  | 2.150000          | 5.652174        | 63.000000   |
+| 25%   | 20.000000    | 995.000000  | 6.190476          | 8.695652        | 68.000000   |
+| 50%   | 21.000000    | 1375.000000 | 7.347826          | 10.227273       | 73.000000   |
+| 75%   | 23.000000    | 1897.500000 | 8.454545          | 12.047619       | 78.000000   |
+| max   | 24.000000    | 4706.000000 | 13.400000         | 16.650000       | 89.000000   |
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>driver_count</th>
-      <th>SOF</th>
-      <th>average_incidents</th>
-      <th>average_license</th>
-      <th>temperature</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>8575.000000</td>
-      <td>8575.000000</td>
-      <td>8575.000000</td>
-      <td>8575.000000</td>
-      <td>8575.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>21.151487</td>
-      <td>1525.663790</td>
-      <td>7.318861</td>
-      <td>10.402733</td>
-      <td>73.655860</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>2.013780</td>
-      <td>725.214854</td>
-      <td>1.642387</td>
-      <td>2.068108</td>
-      <td>6.648384</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>12.000000</td>
-      <td>401.000000</td>
-      <td>2.150000</td>
-      <td>5.652174</td>
-      <td>63.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>20.000000</td>
-      <td>995.000000</td>
-      <td>6.190476</td>
-      <td>8.695652</td>
-      <td>68.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>21.000000</td>
-      <td>1375.000000</td>
-      <td>7.347826</td>
-      <td>10.227273</td>
-      <td>73.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>23.000000</td>
-      <td>1897.500000</td>
-      <td>8.454545</td>
-      <td>12.047619</td>
-      <td>78.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>24.000000</td>
-      <td>4706.000000</td>
-      <td>13.400000</td>
-      <td>16.650000</td>
-      <td>89.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 Above are the summary statistics for numerical variables of interest. 
 
@@ -345,43 +142,12 @@ Running the model on the test data and plotting the predictions versus the actua
 Visually the model does a decent job of predicting average incident count, with a broad linear relationship visible between the actual and predicte values. 
 
 Looking at relevant metrics for model assessment provides further insight: 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+|                          | Values    |
+|---------------------------|----------|
+| Mean Absolute Error        | 0.966231 |
+| Root Mean Squared Error    | 1.227426 |
+| R²                         | 0.453593 |
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Values</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mean Absolute Error</th>
-      <td>0.966231</td>
-    </tr>
-    <tr>
-      <th>Root Mean Squared Error</th>
-      <td>1.227426</td>
-    </tr>
-    <tr>
-      <th>R^2</th>
-      <td>0.453593</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 - **Mean Absolute Error and Root Mean Squared Error** determine how far off the prediction is on average. The root mean square error penalizes outliers heavier by squaring the residual in the calculation. This means that on average, the model is .97 - 1.23 incidents off in prediction.
 
